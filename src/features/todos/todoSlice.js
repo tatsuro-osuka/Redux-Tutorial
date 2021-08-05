@@ -1,6 +1,5 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
 
-import { client } from "../../api/client";
 import { StatusFilters } from "../filters/filterSlice";
 
 const initialState = {
@@ -74,19 +73,19 @@ export const {
 
 export default todosSlice.reducer;
 
-export const fetchTodos = () => async (dispatch) => {
-  dispatch(todosLoading());
-  const res = await client.get("/fakeApi/todos");
-  dispatch(todosLoaded(res.todos));
-};
+// export const fetchTodos = () => async (dispatch) => {
+//   dispatch(todosLoading());
+//   const res = await client.get("/fakeApi/todos");
+//   dispatch(todosLoaded(res.todos));
+// };
 
-export function saveNewTodo(text) {
-  return async function saveNewTodoThunk(dispatch, getState) {
-    const initialTodo = { text };
-    const res = await client.post("/fakeApi/todos", { todo: initialTodo });
-    dispatch(todoAdded(res.todo));
-  };
-}
+// export function saveNewTodo(text) {
+//   return async function saveNewTodoThunk(dispatch, getState) {
+//     const initialTodo = { text };
+//     const res = await client.post("/fakeApi/todos", { todo: initialTodo });
+//     dispatch(todoAdded(res.todo));
+//   };
+// }
 
 const selectTodoEntities = (state) => state.todos.entities;
 
