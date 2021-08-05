@@ -6,10 +6,10 @@ import { store } from "./app/store";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
 
-import "./api/server";
-import { fetchTodos } from "./features/todos/todoSlice";
+// import "./api/server";
+// import { fetchTodos } from "./features/todos/todoSlice";
 
-store.dispatch(fetchTodos());
+// store.dispatch(fetchTodos());
 
 ReactDOM.render(
   <React.StrictMode>

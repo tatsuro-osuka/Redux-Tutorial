@@ -22,6 +22,7 @@ const filtersSlice = createSlice({
       reducer(state, action) {
         let { color, changeType } = action.payload;
         const { colors } = state;
+        console.log(color);
         switch (changeType) {
           case "added": {
             if (!colors.includes(color)) {
